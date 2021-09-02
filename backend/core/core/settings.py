@@ -36,7 +36,6 @@ DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = env('HOSTS')
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -51,7 +50,9 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # Local
+    'users.apps.UsersConfig',
     'puppies.apps.PuppiesConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -90,8 +91,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': env('ENGINE'),
+        'NAME': env('NAME'),
+        'USER': env('DBUSER'),
+        'PASSWORD': env('PASSWORD'),
+        'HOST': env('DBHOST'),
+        'PORT': env('DBPORT'),
     }
 }
 
@@ -135,3 +140,12 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [],
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
+}
+
+AUTH_USER_MODEL = 'users.CustomUser'
