@@ -7,8 +7,6 @@ from rest_framework import status
 from .models import Puppy
 
 
-# initialize the APIClient app
-
 class GetAllPuppiesTest(TestCase):
     """ Test module for GET all puppies API """
     client = Client()
