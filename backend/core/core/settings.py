@@ -88,15 +88,23 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': env('ENGINE'),
+#         'NAME': env('NAME'),
+#         'USER': env('DBUSER'),
+#         'PASSWORD': env('PASSWORD'),
+#         'HOST': env('DBHOST'),
+#         'PORT': env('DBPORT'),
+#     }
+# }
+
 
 DATABASES = {
     'default': {
-        'ENGINE': env('ENGINE'),
-        'NAME': env('NAME'),
-        'USER': env('DBUSER'),
-        'PASSWORD': env('PASSWORD'),
-        'HOST': env('DBHOST'),
-        'PORT': env('DBPORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
     }
 }
 

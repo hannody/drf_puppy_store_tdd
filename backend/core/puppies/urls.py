@@ -1,8 +1,8 @@
-from django.conf.urls import url
-from . import views
+from django.urls import path
 
+from .views import PuppiesList, PuppyDetail
 
 urlpatterns = [
-    url('api/v1/puppies/<int:pk>', views.get_delete_update_puppy,  name='get_delete_update_puppy'),
-    url('api/v1/puppies/',views.get_post_puppies, name='get_post_puppies'),
+    path('puppies/', PuppiesList.as_view(), name='puppies_list'),
+    path('puppy/<int:pk>/', PuppyDetail.as_view(), name='puppy_detail'),
 ]

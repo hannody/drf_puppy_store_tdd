@@ -17,6 +17,10 @@ class Puppy(models.Model):
         return self.name
 
     def get_breed(self):
+        """
+        builds a string of puppy name and breed.
+        :return: string of puppy name and breed.
+        """
         return self.name + ' belongs to ' + self.breed + ' breed.'
 
     def __repr__(self):

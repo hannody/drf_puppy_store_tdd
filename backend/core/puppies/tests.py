@@ -1,6 +1,4 @@
 from django.test import TestCase
-
-from django.test import TestCase
 from .models import Puppy
 
 
@@ -8,6 +6,9 @@ class PuppyTest(TestCase):
     """ Test module for Puppy model """
 
     def setUp(self):
+        """
+        data setup for the testing of the class.
+        """
         Puppy.objects.create(
             name='Casper', age=3, breed='Bull Dog', color='Black')
         Puppy.objects.create(
@@ -31,5 +32,3 @@ class PuppyTest(TestCase):
             puppy_casper.get_breed(), "Casper belongs to Bull Dog breed.")
         self.assertEqual(
             puppy_muffin.get_breed(), "Muffin belongs to Gradane breed.")
-
-
