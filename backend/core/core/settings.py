@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 from os.path import (join, realpath, sep)
 from pathlib import Path
+
 from environ import Env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -152,7 +153,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [],
+    'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny', ],
     'TEST_REQUEST_DEFAULT_FORMAT': 'json'
 }
 

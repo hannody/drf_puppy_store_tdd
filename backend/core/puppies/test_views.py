@@ -1,3 +1,4 @@
+import json
 from random import randrange
 
 from django.test import TestCase, Client
@@ -12,6 +13,7 @@ class GetAllPuppiesTest(TestCase):
     client = Client()
     list_endpoint = '/api/v1/puppies/'
     detail_endpoint = '/api/v1/puppy/'
+    post_endpoint = '/api/v1/puppy/new/'
     id = 1
 
     def setUp(self):
@@ -28,8 +30,8 @@ class GetAllPuppiesTest(TestCase):
 
     def get_random_id(self):
         """
-        Generate an integer value between two and the number of Puppy model object plus 1.
-        :return: an integer between 'id+1' and 'Puppy.objects.all().count())'
+        Generate an integer value between two and the number (objects count) of Puppy model object plus 1.
+        :return: an integer between 'id+1' and 'Puppy.objects.all().count()) + 1'
         """
         stop = Puppy.objects.all().count()
         return randrange(self.id + 1, stop, 1)
@@ -85,3 +87,19 @@ class GetAllPuppiesTest(TestCase):
         self.assertContains(response, puppy.breed)
 
         self.assertNotContains(response, Puppy.objects.get(id=self.get_random_id()).name)
+
+    def test_create_new_puppy(self):
+        """
+        Creating a new puppy object Create_RUD
+        :return: Assertion result.
+        """
+        new_puppy = {
+            'name': 'Cyborg',
+            'age': 2,
+            'breed': 'German Shepherd',
+            'color': 'Black and Orange'
+        }
+        previous_object_count = Puppy.objects.all().count()
+        response = self.client.post(path=self.post_endpoint, data=new_puppy, format='json')
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertTrue(Puppy.objects.count() > previous_object_count)
