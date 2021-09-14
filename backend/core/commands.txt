@@ -1,0 +1,11 @@
+-To run coverage tool:
+$ coverage run --source='.' manage.py test
+
+-To view the generated report in terminal:
+$ coverage report
+
+-To generate a report with html format:
+$ coverage html
+
+-To run the tests:
+$ python manage.py test
