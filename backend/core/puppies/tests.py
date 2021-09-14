@@ -21,7 +21,7 @@ class PuppyTest(TestCase):
         puppy = Puppy(name="Rocky")
         self.assertEqual(str(puppy), puppy.name)
 
-    def test_correct_pluralization_of_Puppy(self):
+    def test_correct_pluralization_of_puppy(self):
         """ Test the correct plural word of Puppy => Puppies not Puppys """
         self.assertEqual(str(Puppy._meta.verbose_name_plural), 'puppies')
 

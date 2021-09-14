@@ -6,6 +6,9 @@ from .managers import CustomUserManager
 
 
 class CustomUser(AbstractUser):
+    """
+    Creating a new user using only email and password, without Username.
+    """
     username = None
     email = models.EmailField(_('email address'), unique=True)
 

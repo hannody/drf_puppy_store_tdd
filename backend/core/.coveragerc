@@ -1,0 +1,6 @@
+[run]
+source = .
+omit = ./core/*,*apps.py,*manage.py,*__init__.py,*migrations*,*asgi*,*wsgi*,*admin.py,*urls.py
+
+[report]
+omit = ./core/*,*apps.py,*manage.py,*__init__.py,*migrations*,*asgi*,*wsgi*,*admin.py,*urls.py
