@@ -32,5 +32,5 @@ jobs:
         run: |
           python manage.py test
         env:
-          secret_key: ${{secrets.SECRET_KEY}}
-          allowed_hosts: ${{secrets.ALLOWED_HOSTS}}
+          SECRET_KEY: ${{secrets.SECRET_KEY}}
+          ALLOWED_HOSTS: ${{secrets.ALLOWED_HOSTS}}
