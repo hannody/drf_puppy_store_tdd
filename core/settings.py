@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 from os.path import (join, realpath, sep)
 from pathlib import Path
-
+from os import environ
 from environ import Env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,7 +31,7 @@ Env.read_env(join(BASE_DIR, env_dir, '.env'))
 # reading .env file
 Env.read_env()
 
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = environ['SECRET_KEY']#env('SECRET_KEY')
 
 DEBUG = env('DEBUG')
 
