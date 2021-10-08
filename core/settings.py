@@ -11,49 +11,36 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 from os.path import (join, realpath, sep)
 from pathlib import Path
-from environ import Env
+
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-env = Env(
-    # set casting, default value
-    DEBUG=(bool, False)
-)
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-# Locating .env file
-# assuming the .env file is in the same dir of settings.py
-env_dir = realpath(__file__).split(sep)[-2]
+SECRET_KEY = config('SECRET_KEY')
 
-Env.read_env(join(BASE_DIR, env_dir, '.env'))
-
-# reading .env file
-Env.read_env()
-
-SECRET_KEY = env('SECRET_KEY')
-
-DEBUG = True
-
-ALLOWED_HOSTS = env('ALLOWED_HOSTS')
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 
 # Application definition
 
-INSTALLED_APPS = [
+default_apps = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # Third Party
-    'rest_framework',
-
-    # Local
-    'users.apps.UsersConfig',
-    'puppies.apps.PuppiesConfig',
-
 ]
+
+third_party_apps = ['rest_framework', ]
+
+local_apps = ['users.apps.UsersConfig', 'puppies.apps.PuppiesConfig', ]
+
+INSTALLED_APPS = default_apps + third_party_apps + local_apps
+
+print(INSTALLED_APPS)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -91,12 +78,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 #
 # DATABASES = {
 #     'default': {
-#         'ENGINE': env('ENGINE'),
-#         'NAME': env('NAME'),
-#         'USER': env('DBUSER'),
-#         'PASSWORD': env('PASSWORD'),
-#         'HOST': env('DBHOST'),
-#         'PORT': env('DBPORT'),
+#         'ENGINE': config('ENGINE'),
+#         'NAME': config('NAME'),
+#         'USER': config('DBUSER'),
+#         'PASSWORD': config('PASSWORD'),
+#         'HOST': config('DBHOST'),
+#         'PORT': config('DBPORT'),
 #     }
 # }
 
