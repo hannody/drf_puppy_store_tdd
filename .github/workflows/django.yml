@@ -1,4 +1,4 @@
-name: Django CD
+name: Django-CD
 
 # Controls when the workflow will run
 on:
