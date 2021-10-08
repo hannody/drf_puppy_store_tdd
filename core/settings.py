@@ -31,11 +31,11 @@ Env.read_env(join(BASE_DIR, env_dir, '.env'))
 # reading .env file
 Env.read_env()
 
-SECRET_KEY = os.environ.get('SECRET_KEY') #env('SECRET_KEY')
+SECRET_KEY = "os.environ.get('SECRET_KEY') #env('SECRET_KEY')"
 
-DEBUG = env('DEBUG')
+DEBUG = True # env('DEBUG')
 
-ALLOWED_HOSTS = os.environ.get('HOSTS')
+ALLOWED_HOSTS = ['*'] # os.environ.get('HOSTS')
 
 # Application definition
 
