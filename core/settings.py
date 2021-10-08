@@ -31,7 +31,7 @@ Env.read_env(join(BASE_DIR, env_dir, '.env'))
 # reading .env file
 Env.read_env()
 
-SECRET_KEY = environ['SECRET_KEY']#env('SECRET_KEY')
+SECRET_KEY = environ.get('SECRET_KEY') #env('SECRET_KEY')
 
 DEBUG = env('DEBUG')
 
