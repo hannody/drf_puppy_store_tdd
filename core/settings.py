@@ -35,7 +35,7 @@ SECRET_KEY = "os.environ.get('SECRET_KEY') #env('SECRET_KEY')"
 
 DEBUG = True # env('DEBUG')
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
+ALLOWED_HOSTS = os.environ.get('allowed_hosts')
 
 # Application definition
 
