@@ -31,5 +31,5 @@ jobs:
       - name: Run Tests
         run: |
           python manage.py test
-        with:
-          SECRET_KEY:${{secrets.SECRET_KEY}}
+        env:
+          secret_key: ${{secrets.SECRET_KEY}}
