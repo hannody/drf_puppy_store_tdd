@@ -4,7 +4,7 @@ from .models import Puppy
 from .serializers import PuppySerializer
 
 
-class PuppiesList(ListAPIView):
+class PuppiesList(ListAPIView, ):
     """
     List all puppies without pagination
     """
