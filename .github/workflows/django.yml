@@ -1,6 +1,4 @@
-
-  
-name: CD
+name: Django CD
 
 # Controls when the workflow will run
 on:
@@ -33,4 +31,3 @@ jobs:
       - name: Run Tests
         run: |
           pthon manage.py test
-      
