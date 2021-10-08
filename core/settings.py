@@ -33,9 +33,9 @@ Env.read_env()
 
 SECRET_KEY = os.environ.get('SECRET_KEY') #env('SECRET_KEY')"
 
-DEBUG = True # env('DEBUG')
+DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
+ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
 # Application definition
 
