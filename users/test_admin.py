@@ -1,7 +1,7 @@
 from django.test import SimpleTestCase
 from rest_framework import status
 
-from backend.core.core.urls import admin_url
+from core.urls import admin_url
 
 
 class TestAdminCustomURL(SimpleTestCase):
