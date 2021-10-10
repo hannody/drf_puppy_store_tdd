@@ -15,6 +15,14 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
+        # Disable HTTPS redirects while testing with Django's HTTP test client.
+    try:
+        from core import settings
+        if len(sys.argv) > 1 and sys.argv[1] == "test":
+            settings.SECURE_SSL_REDIRECT = False
+    except Exception as e:
+        print(str(e))
+
     execute_from_command_line(sys.argv)
 
 
