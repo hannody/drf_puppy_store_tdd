@@ -228,4 +228,5 @@ modules.xml
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
-/mydatabase/
+mydatabase
+*.sqlite3
