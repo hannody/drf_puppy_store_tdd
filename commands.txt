@@ -9,3 +9,5 @@ $ coverage html
 
 -To run the tests:
 $ python manage.py test
+
+- Flake8 $ flake8 --ignore E501,W292
