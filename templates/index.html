@@ -5,13 +5,32 @@
     <title>Puppy Store</title>
 </head>
 <body>
- <h2>Welcome To Puppy Store</h2>
-<p><a href="http://127.0.0.1:8000/admin/">Admin</a></p>
-<p><a href="http://127.0.0.1:8000/api/v1/puppies/">API</a></p>
-<p><a href="http://127.0.0.1:8000/api/v1/puppy/1/">Puppy</a></p>
-<p><a href="http://127.0.0.1:8000/api/v1/puppy/new/">New Puppy</a></p>
-<p><a href="http://127.0.0.1:8000/api/v1/puppy/delete/1/">Delete</a></p>
-<p><a href="http://127.0.0.1:8000/api/v1/puppy/update/1/">Update</a></p>
-
+<h1 style="text-align:center;">Welcome To Puppy Store 🐶</h1>
+<hr/>
+<p>
+   {% if user.is_authenticated %}
+    <text>Hi {{ user.email }}</text>
+{% else %}
+    <text>💁You are not logged in.</text>
+    <text><cite>Login as admin before accessing any endpoint.</cite></text>
+{% endif %}
+</p>
+<ul>
+    <li><a href="http://127.0.0.1:8000/api/v1/puppies/">Get all Puppies</a></li>
+    <br/>
+    <li><a href="http://127.0.0.1:8000/api/v1/puppy/1/">Get single Puppy</a></li>
+    <br/>
+    <li><a href="http://127.0.0.1:8000/api/v1/puppy/new/">Add new Puppy</a></li>
+    <br/>
+    <li><a href="http://127.0.0.1:8000/api/v1/puppy/delete/1/">Delete single Puppy</a></li>
+    <br/>
+    <li><a href="http://127.0.0.1:8000/api/v1/puppy/update/1/">Details update</a></li>
+</ul>
 </body>
+
+
+<p style=" position: absolute; bottom: 0; left: 0; width: 100%; text-align: center;">
+    <a href="http://www.abunayla.com" target="_blank" rel="noopener noreferrer">Developed by: Mohanad Abu-Nayla</a><br/>
+    <a href="https://github.com/hannody" target="_blank" rel="noopener noreferrer">GitHub</a>
+</p>
 </html>

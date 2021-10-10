@@ -228,3 +228,4 @@ modules.xml
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+/staticfiles/
