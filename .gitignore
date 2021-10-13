@@ -231,4 +231,3 @@ modules.xml
 mydatabase
 *.sqlite3
 /staticfiles/
-/static/
