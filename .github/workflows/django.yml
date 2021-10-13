@@ -34,3 +34,17 @@ jobs:
         env:
           SECRET_KEY: ${{secrets.SECRET_KEY}}
           ALLOWED_HOSTS: ${{secrets.ALLOWED_HOSTS}}
+  deploy:
+    name: Heroku Deployment
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP}} #Must be unique in Heroku
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+      - name: Deployment Status
+        run: |
+            echo Success.
