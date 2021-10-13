@@ -8,4 +8,4 @@ this tutorial draws inspiration from (and builds upon) the following sources:
 
 However, this repository is using Python 3.8.10, Django 3.2.6, python-decopule for env vars, Test Coverage,Flake8, CICD with GitHub Actions and Deployment to Heroku. 
 
-working app (CRUD operations only available for Admins at the moment): https://drf-puppy-store.herokuapp.com/
+** A working app (CRUD operations only available for Admins at the moment): https://drf-puppy-store.herokuapp.com/
