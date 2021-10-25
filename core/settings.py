@@ -15,7 +15,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.spl
 
 # Application definition
 
-default_apps = [
+DEFAULT_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -25,11 +25,19 @@ default_apps = [
     'django.contrib.staticfiles',
 ]
 
-third_party_apps = ['rest_framework', ]
+THIRD_PARTY_APPS = [
+    'rest_framework',
+    'django_otp',
+    'django_otp.plugins.otp_totp',
+    'django_otp.plugins.otp_static',
+]
 
-local_apps = ['users.apps.UsersConfig', 'puppies.apps.PuppiesConfig', ]
+LOCAL_APPS = [
+    'users.apps.UsersConfig',
+    'puppies.apps.PuppiesConfig',
+]
 
-INSTALLED_APPS = default_apps + third_party_apps + local_apps
+INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -38,6 +46,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django_otp.middleware.OTPMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
