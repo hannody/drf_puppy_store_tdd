@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import os
 from pathlib import Path
 
 from decouple import config
@@ -19,7 +18,7 @@ import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = False # config('DEBUG', default=False, cast=bool)
+DEBUG = False  # config('DEBUG', default=False, cast=bool)
 
 SECRET_KEY = config('SECRET_KEY')
 
@@ -43,8 +42,6 @@ local_apps = ['users.apps.UsersConfig', 'puppies.apps.PuppiesConfig', ]
 
 INSTALLED_APPS = default_apps + third_party_apps + local_apps
 
-print(INSTALLED_APPS)
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -56,18 +53,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
 ROOT_URLCONF = 'core.urls'
 
 CSRF_COOKIE_SECURE = True
-print('==>', config('SECURE_SSL_REDIRECT', cast=bool),':', type(config('SECURE_SSL_REDIRECT', cast=bool)))
 SECURE_SSL_REDIRECT = config('SECURE_SSL_REDIRECT', cast=bool)
-SESSION_COOKIE_SECURE =True
+SESSION_COOKIE_SECURE = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_HSTS_SECONDS = 31536000 * 2
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
-
 
 TEMPLATES = [
     {
@@ -151,7 +145,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
 STATIC_ROOT = str(BASE_DIR.joinpath('static/staticfiles'))
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
