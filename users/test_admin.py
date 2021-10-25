@@ -22,3 +22,10 @@ class TestAdminCustomURL(SimpleTestCase):
         """
         response = self.client.get(self.custom_admin_url)
         self.assertEqual(response.status_code, 200)
+
+    # def test_default_admin_url_404(self):
+    #     """
+    #     verifying the default 'admin/' url is no longer reachable.
+    #     """
+    #     response = self.client.get(self.default_admin_ulr)
+    #     self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)

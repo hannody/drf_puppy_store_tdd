@@ -5,13 +5,14 @@ from django.views.generic import TemplateView
 from django_otp.admin import OTPAdminSite
 from decouple import config
 
-if config('DEBUG'):
-    ADMIN_URL = 'admin'
-else:
-    # Enforce 2FA only in production.
+from core import settings
+
+if not settings.DEBUG:
     admin.site.__class__ = OTPAdminSite
-    # Use a more secure admin url instead of the default 'admin'
     ADMIN_URL = config('ADMIN_URL')
+else:
+    ADMIN_URL = 'admin'
+
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name="index.html")),
