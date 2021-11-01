@@ -7,7 +7,7 @@
 
 The open-source community is the most inspiring and generous, thus, I am publishing this tutorial as a thank you to all open source communities and to all the fellow developers and content creators who make their work and expertise available for everyone, I am working on contributing to open source, starting with baby steps but aiming towards more contributions with free content and collaborations, we all know Knowledge is power & Sharing is caring so let's share our knowledge to empower everyone.
 
-This tutorial draws inspiration from, updates and expand upon the following sources:
+This tutorial draws inspiration from, updates and expands upon the following sources:
 
 1- https://testdriven.io/blog/django-custom-user-model/ <br />
 2- https://realpython.com/test-driven-development-of-a-django-restful-api/ <br />
