@@ -9,11 +9,11 @@ The open-source community is the most inspiring and generous, thus, I am publish
 
 This tutorial draws inspiration from, updates and expand upon the following sources:
 
-1- https://testdriven.io/blog/django-custom-user-model/
-2- https://realpython.com/test-driven-development-of-a-django-restful-api/
-3- https://www.feldroy.com/books/two-scoops-of-django-3-x
-4- https://djangoforprofessionals.com/
-5- https://www.youtube.com/watch?v=llaUBH5oayw
+1- https://testdriven.io/blog/django-custom-user-model/ <br />
+2- https://realpython.com/test-driven-development-of-a-django-restful-api/ <br />
+3- https://www.feldroy.com/books/two-scoops-of-django-3-x <br />
+4- https://djangoforprofessionals.com/ <br />
+5- https://www.youtube.com/watch?v=llaUBH5oayw <br />
 
 
 However, this repository is using Python 3.8.10, Django 3.2.6, python-decopule for env vars, Test Coverage,Flake8, CICD with GitHub Actions and Deployment to Heroku.
