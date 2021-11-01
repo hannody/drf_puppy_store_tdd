@@ -1,7 +1,7 @@
 # Test Driven Development with Django Rest Framework using CI/CD with GitHub Actions for Automated Testing and Continues Deployment to Heroku, this project is suitable for Django developers who are looking for expanding their knowledge in the topics of:
-1- Preparing a Django RestAPI project for Production (Especially security). 
-2- Using CI/CD for automation of tasks e.g. testing and continuous deployment. 
-3- Using a Test-Driven Approach TDD, with reasonably good test coverage.
+### 1- Preparing a Django RestAPI project for Production (Especially security). 
+### 2- Using CI/CD for automation of tasks e.g. testing and continuous deployment. 
+### 3- Using a Test-Driven Approach TDD, with reasonably good test coverage score.
 
 
 
